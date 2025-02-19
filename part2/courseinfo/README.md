@@ -1,7 +1,6 @@
 Course Information - Full Stack Open (Part 2)
 
-Project Structure
-  
+📂 Project Structure
 courseinfo/
 │── src/
 │   ├── components/
@@ -58,8 +57,7 @@ npm run dev
 
 Tarayıcınızda açın:http://localhost:5173
 
-📂 Proje Yapısı
-
+📂 Project Yapısı
 courseinfo/
 │── src/
 │   ├── components/
@@ -68,6 +66,7 @@ courseinfo/
 │   ├── main.jsx
 │── package.json
 │── vite.config.js
+
 
 
 🔧 Kullanılan Teknolojiler
