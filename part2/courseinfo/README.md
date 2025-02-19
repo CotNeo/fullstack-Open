@@ -70,6 +70,7 @@ courseinfo/
 │── package.json
 │── vite.config.js
 
+
 🔧 Kullanılan Teknolojiler
 
 React
