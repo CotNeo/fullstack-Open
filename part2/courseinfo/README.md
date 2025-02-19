@@ -2,6 +2,7 @@ Course Information - Full Stack Open (Part 2)
 
 📂 Project Structure
 
+  
 courseinfo/
 │── src/
 │   ├── components/
@@ -10,6 +11,7 @@ courseinfo/
 │   ├── main.jsx
 │── package.json
 │── vite.config.js
+
 
 🔧 Technologies Used
 
