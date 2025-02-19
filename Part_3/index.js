@@ -24,6 +24,11 @@ app.get('/', (req, res) => {
 });
 
 
+// 📌 GET / → Ana sayfa için yönlendirme
+app.get('/', (req, res) => {
+    res.send('<h1>Welcome to the Phonebook API!</h1><p>Try <a href="/api/persons">/api/persons</a></p>');
+});
+
 // 📌 GET /api/persons → Tüm kişileri listele
 app.get('/api/persons', (req, res) => {
     res.json(persons)
