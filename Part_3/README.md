@@ -52,7 +52,7 @@ $ npm run dev
 
 ### 📂 Project Structure
 ```
-fullstack-Open/
+Phonebook-Backend/
 │── package.json         # Project dependencies
 │── package-lock.json    # Dependency lock file
 │── index.js             # Main application file
@@ -116,7 +116,7 @@ $ npm run dev
 
 ### 📂 Proje Yapısı
 ```
-fullstack-Open/
+Phonebook-Backend/
 │── package.json         # Proje bağımlılıkları
 │── package-lock.json    # Bağımlılık kilit dosyası
 │── index.js             # Ana uygulama dosyası
