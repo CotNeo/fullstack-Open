@@ -18,6 +18,11 @@ let persons = [
     { id: "3", name: "Dan Abramov", number: "12-43-234345" },
     { id: "4", name: "Mary Poppendieck", number: "39-23-6423122" }
 ]
+// 📌 GET / → Ana sayfa için yönlendirme
+app.get('/', (req, res) => {
+    res.send('<h1>Welcome to the Phonebook API!</h1><p>Try <a href="/api/persons">/api/persons</a></p>');
+});
+
 
 // 📌 GET /api/persons → Tüm kişileri listele
 app.get('/api/persons', (req, res) => {
