@@ -4,9 +4,6 @@
         "src": "index.html",
         "use": "@vercel/static"
       }
-    ],
-    "scripts": {
-      "build": "vite build"
-    }
+    ]
   }
   
