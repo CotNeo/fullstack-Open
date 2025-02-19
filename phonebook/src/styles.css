@@ -1,0 +1,170 @@
+/* 📌 Genel Ayarlar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 📌 Sayfa Genel Görünümü */
+body {
+  background-color: #f4f7fc;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* 📌 Kapsayıcı */
+.container {
+  max-width: 500px;
+  width: 100%;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* 📌 Başlık */
+h1 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+/* 📌 Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 📌 Input Alanı */
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+
+/* 📌 Buton */
+.button {
+  background: #007bff;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* 📌 Kart Görünümü */
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 📌 Silme Butonu */
+.delete-btn {
+  background: #ff4d4d;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #cc0000;
+  transform: scale(1.05);
+}
+
+/* 📌 Responsive Tasarım */
+@media (max-width: 600px) {
+  .container {
+    max-width: 90%;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  input {
+    font-size: 14px;
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* 📌 Dark Mode Desteği */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #121212;
+    color: white;
+  }
+
+  .container {
+    background: #1e1e1e;
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+  }
+
+  .button {
+    background: #1e90ff;
+  }
+
+  .button:hover {
+    background: #007bff;
+  }
+
+  .delete-btn {
+    background: #ff4d4d;
+  }
+
+  .delete-btn:hover {
+    background: #cc0000;
+  }
+
+  input {
+    background: #2c2c2c;
+    color: white;
+    border: 1px solid #444;
+  }
+}
