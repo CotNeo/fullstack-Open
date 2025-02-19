@@ -1,7 +1,6 @@
 Course Information - Full Stack Open (Part 2)
 
-📂 Project Structure
-
+Project Structure
   
 courseinfo/
 │── src/
