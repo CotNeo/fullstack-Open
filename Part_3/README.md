@@ -1,11 +1,13 @@
-# Phonebook API
+# Phonebook API 🚀
 
-## 📌 Introduction
+## 🌍 English
+
+### 📌 Introduction
 This is a simple RESTful API for managing a phonebook. The API allows users to retrieve, add, and delete contacts. The application is built using **Express.js** with logging provided by **Morgan** and CORS enabled for cross-origin requests.
 
 This project is part of the **University of Helsinki's Full Stack Open course (Part 3 Exercises)**.
 
-## 🚀 Features
+### 🚀 Features
 - List all contacts
 - Get details of a single contact
 - Delete a contact
@@ -13,31 +15,31 @@ This project is part of the **University of Helsinki's Full Stack Open course (P
 - Log HTTP requests
 - Handles unknown endpoints
 
-## 📦 Technologies Used
+### 📦 Technologies Used
 - **Node.js**
 - **Express.js**
 - **Morgan** (Logging)
 - **CORS** (Cross-Origin Resource Sharing)
 
-## 🛠️ Setup & Installation
+### 🛠️ Setup & Installation
 
-### 1️⃣ Clone the repository
-```bash
+#### 1️⃣ Clone the repository
+```sh
 $ git clone https://github.com/CotNeo/fullstack-Open.git
 $ cd fullstack-Open
 ```
 
-### 2️⃣ Install dependencies
-```bash
+#### 2️⃣ Install dependencies
+```sh
 $ npm install
 ```
 
-### 3️⃣ Start the server
-```bash
+#### 3️⃣ Start the server
+```sh
 $ npm start
 ```
 Or, run in development mode with **nodemon**:
-```bash
+```sh
 $ npm run dev
 ```
 
@@ -60,16 +62,21 @@ Phonebook-Backend/
 ├───node_modules/        # Installed dependencies
 ```
 
+### 🌐 Live Demo
+- **Frontend:** [Phonebook App](https://fso-frontend-phonebook.netlify.app/) 🌍
+- **Backend API:** [Phonebook Backend](https://phonebook-backend-77kw.onrender.com/api/persons) ⚡
+  - *Note: The backend is deployed on a free-tier plan, so there may be some delay when the server is cold. If there are no recent requests, the server may be temporarily inactive.*
+
 ---
 
-# Telefon Rehberi API
+## 🇹🇷 Telefon Rehberi API
 
-## 📌 Giriş
+### 📌 Giriş
 Bu proje, bir telefon rehberi yönetmek için geliştirilen basit bir **RESTful API**'dir. API, kişileri listeleme, ekleme ve silme işlemlerini yapmanıza olanak tanır. Uygulama **Express.js** kullanılarak geliştirilmiş olup, **Morgan** ile HTTP istekleri loglanmakta ve **CORS** desteği ile çapraz kaynak erişimine izin vermektedir.
 
 Bu proje, **Helsinki Üniversitesi Full Stack Open kursunun 3. Bölüm Egzersizleri** kapsamındadır.
 
-## 🚀 Özellikler
+### 🚀 Özellikler
 - Tüm kişileri listeleme
 - Tek bir kişinin bilgilerini getirme
 - Kişi silme
@@ -77,31 +84,31 @@ Bu proje, **Helsinki Üniversitesi Full Stack Open kursunun 3. Bölüm Egzersizl
 - HTTP isteklerini loglama
 - Bilinmeyen uç noktalar için hata yönetimi
 
-## 📦 Kullanılan Teknolojiler
+### 📦 Kullanılan Teknolojiler
 - **Node.js**
 - **Express.js**
 - **Morgan** (Loglama)
 - **CORS** (Çapraz Kaynak Paylaşımı)
 
-## 🛠️ Kurulum ve Çalıştırma
+### 🛠️ Kurulum ve Çalıştırma
 
-### 1️⃣ Depoyu klonlayın
-```bash
+#### 1️⃣ Depoyu klonlayın
+```sh
 $ git clone https://github.com/CotNeo/fullstack-Open.git
 $ cd fullstack-Open
 ```
 
-### 2️⃣ Bağımlılıkları yükleyin
-```bash
+#### 2️⃣ Bağımlılıkları yükleyin
+```sh
 $ npm install
 ```
 
-### 3️⃣ Sunucuyu başlatın
-```bash
+#### 3️⃣ Sunucuyu başlatın
+```sh
 $ npm start
 ```
 Ya da, geliştirme modunda çalıştırmak için:
-```bash
+```sh
 $ npm run dev
 ```
 
@@ -123,4 +130,14 @@ Phonebook-Backend/
 │── .gitignore           # Gereksiz dosyaları yok sayma
 ├───node_modules/        # Yüklenen bağımlılıklar
 ```
+
+### 🌐 Canlı Demo
+- **Frontend:** [Telefon Rehberi Uygulaması](https://fso-frontend-phonebook.netlify.app/) 🌍
+- **Backend API:** [Telefon Rehberi Backend](https://phonebook-backend-77kw.onrender.com/api/persons) ⚡
+  - *Not: Backend, ücretsiz plan ile dağıtıldığı için sunucu soğukken gecikme yaşanabilir. Eğer yakın zamanda istek yapılmamışsa sunucu geçici olarak kapalı olabilir.*
+
+---
+
+🛠 **Geri Bildirim & Katkılar**
+Herhangi bir geri bildiriminiz varsa paylaşabilirsiniz! 💬
 
