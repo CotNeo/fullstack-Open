@@ -1,96 +1,150 @@
+require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
+const mongoose = require('mongoose')
+const Person = require('./models/person') // Mongoose modeli
 
 const app = express()
 
-// 📌 Middleware: CORS ve JSON Parser
-app.use(cors()) // Tüm origin’lerden istek kabul ediliyor.
+// 📌 Middleware: CORS, JSON Parser
+app.use(cors()) 
 app.use(express.json())
 
 // 📌 Morgan Loglama (POST isteklerinde body'yi göster)
 morgan.token('post-data', (req) => req.method === 'POST' ? JSON.stringify(req.body) : '')
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :post-data'))
 
-let persons = [
-    { id: "1", name: "Arto Hellas", number: "040-123456" },
-    { id: "2", name: "Ada Lovelace", number: "39-44-5323523" },
-    { id: "3", name: "Dan Abramov", number: "12-43-234345" },
-    { id: "4", name: "Mary Poppendieck", number: "39-23-6423122" }
-]
-// 📌 GET / → Ana sayfa için yönlendirme
-app.get('/', (req, res) => {
-    res.send('<h1>Welcome to the Phonebook API!</h1><p>Try <a href="/api/persons">/api/persons</a></p>');
-});
-
+// 📌 MongoDB Bağlantısı
+const MONGO_URI = process.env.MONGO_URI
+mongoose.set('strictQuery', false)
+mongoose.connect(MONGO_URI)
+  .then(() => console.log('✅ MongoDB bağlantısı başarılı!'))
+  .catch(err => console.error('❌ MongoDB bağlantı hatası:', err.message))
 
 // 📌 GET / → Ana sayfa için yönlendirme
 app.get('/', (req, res) => {
-    res.send('<h1>Welcome to the Phonebook API!</h1><p>Try <a href="/api/persons">/api/persons</a></p>');
-});
+    res.send('<h1>Welcome to the Phonebook API!</h1><p>Try <a href="/api/persons">/api/persons</a></p>')
+})
 
 // 📌 GET /api/persons → Tüm kişileri listele
-app.get('/api/persons', (req, res) => {
-    res.json(persons)
+app.get('/api/persons', async (req, res) => {
+    try {
+        const persons = await Person.find({})
+        res.json(persons)
+    } catch (error) {
+        res.status(500).json({ error: 'Veritabanından kişiler alınamadı' })
+    }
 })
 
 // 📌 GET /info → Telefon rehberi bilgisi
-app.get('/info', (req, res) => {
-    const count = persons.length
-    const time = new Date()
-    res.send(`<p>Phonebook has info for ${count} people</p><p>${time}</p>`)
+app.get('/info', async (req, res) => {
+    try {
+        const count = await Person.countDocuments({})
+        res.send(`<p>Phonebook has info for ${count} people</p><p>${new Date()}</p>`)
+    } catch (error) {
+        res.status(500).json({ error: 'Veritabanından kişi sayısı alınamadı' })
+    }
 })
 
 // 📌 GET /api/persons/:id → Tek bir kişiyi getir
-app.get('/api/persons/:id', (req, res) => {
-    const id = req.params.id
-    const person = persons.find(p => p.id === id)
-
-    if (person) {
-        res.json(person)
-    } else {
-        res.status(404).json({ error: "Person not found" })
+app.get('/api/persons/:id', async (req, res) => {
+    try {
+        const person = await Person.findById(req.params.id)
+        if (person) {
+            res.json(person)
+        } else {
+            res.status(404).json({ error: "Person not found" })
+        }
+    } catch (error) {
+        res.status(400).json({ error: "Invalid ID format" })
     }
 })
 
 // 📌 DELETE /api/persons/:id → Kişiyi sil
-app.delete('/api/persons/:id', (req, res) => {
-    const id = req.params.id
-    persons = persons.filter(p => p.id !== id)
-
-    res.status(204).end()
+app.delete('/api/persons/:id', async (req, res) => {
+    try {
+        await Person.findByIdAndDelete(req.params.id)
+        res.status(204).end()
+    } catch (error) {
+        res.status(400).json({ error: "Invalid ID format" })
+    }
 })
 
 // 📌 POST /api/persons → Yeni kişi ekle
-app.post('/api/persons', (req, res) => {
+app.post('/api/persons', async (req, res) => {
     const body = req.body
 
     if (!body.name || !body.number) {
         return res.status(400).json({ error: "Name or number missing" })
     }
 
-    if (persons.find(p => p.name === body.name)) {
+    const existingPerson = await Person.findOne({ name: body.name })
+    if (existingPerson) {
         return res.status(400).json({ error: "Name must be unique" })
     }
 
-    const newPerson = {
-        id: String(Math.floor(Math.random() * 100000)),
+    const newPerson = new Person({
         name: body.name,
         number: body.number
+    })
+
+    try {
+        const savedPerson = await newPerson.save()
+        res.status(201).json(savedPerson)
+    } catch (error) {
+        res.status(500).json({ error: "Failed to save the person" })
+    }
+})
+
+// 📌 POST /api/persons/bulk → Toplu kişi ekleme (Bulk Insert)
+app.post('/api/persons/bulk', async (req, res) => {
+    const body = req.body
+
+    if (!Array.isArray(body) || body.length === 0) {
+        return res.status(400).json({ error: "Gönderilen veri bir dizi (array) olmalıdır." })
     }
 
-    persons = [...persons, newPerson]
-    res.status(201).json(newPerson)
+    try {
+        const savedPersons = await Person.insertMany(body)
+        res.status(201).json(savedPersons)
+    } catch (error) {
+        res.status(500).json({ error: "Veri eklenirken hata oluştu." })
+    }
+})
+
+// 📌 PUT /api/persons/:id → Mevcut kişinin bilgilerini güncelle
+app.put('/api/persons/:id', async (req, res) => {
+    const body = req.body
+
+    if (!body.name || !body.number) {
+        return res.status(400).json({ error: "Name or number missing" })
+    }
+
+    try {
+        const updatedPerson = await Person.findByIdAndUpdate(
+            req.params.id,
+            { name: body.name, number: body.number },
+            { new: true, runValidators: true }
+        )
+        
+        if (updatedPerson) {
+            res.json(updatedPerson)
+        } else {
+            res.status(404).json({ error: "Person not found" })
+        }
+    } catch (error) {
+        res.status(400).json({ error: "Invalid ID format" })
+    }
 })
 
 // 📌 Middleware: Bilinmeyen URL için 404 hatası
-const unknownEndpoint = (request, response) => {
-  response.status(404).json({ error: 'unknown endpoint' })
-}
-app.use(unknownEndpoint)
+app.use((req, res) => {
+    res.status(404).json({ error: 'unknown endpoint' })
+})
 
-// 📌 Sunucuyu başlat (Deploy İçin Güncellendi)
+// 📌 Sunucuyu başlat
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`)
+    console.log(`✅ Server running on port ${PORT}`)
 })
