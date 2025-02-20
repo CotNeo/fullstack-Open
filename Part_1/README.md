@@ -1,22 +1,25 @@
-# 🚀 Full Stack Open - Anecdotes 📖
+# 🚀 Full Stack Open - Part 1 📚
 
 ## 🌍 English
 
 ### 📌 Overview
-Anecdotes is a simple React application that displays programming-related anecdotes. Users can vote for their favorite anecdotes, and the one with the most votes is highlighted. This project is a part of the **Full Stack Open** course by the University of Helsinki.
+**Part 1** of the **Full Stack Open** course focuses on the fundamentals of React, component-based architecture, and state management. It consists of three main projects:
+
+1. **Courseinfo** 📘 - Introduction to components and props.
+2. **Unicafe** 🍵 - Managing state and handling user interactions.
+3. **Anecdotes** 🎭 - Implementing voting functionality and state updates.
 
 ### ⭐ Features
-✅ Displays a random anecdote  
-✅ Allows users to vote for anecdotes  
-✅ Shows the anecdote with the most votes  
-✅ Implements state management using `useState` ⚙️  
-✅ Dynamically updates the most voted anecdote 📊  
-✅ Uses modular components for better readability 🎯  
+✅ React components and props 🏗️  
+✅ State management using `useState` ⚙️  
+✅ Dynamic content updates 📊  
+✅ User interactions handling 🎯  
+✅ Modular component structure for better maintainability 🔄  
 
 ### 🛠 Technologies Used
 - ⚛️ React
 - 📜 JavaScript (ES6+)
-- 🔄 useState Hook
+- 🔄 State management with `useState`
 - 🎨 HTML & CSS for basic styling
 
 ### 📂 Project Structure
@@ -24,14 +27,14 @@ Anecdotes is a simple React application that displays programming-related anecdo
 part1/
 ├── 📘 courseinfo/     # Exercises 1.1 - 1.5
 ├── 🍵 unicafe/        # Exercises 1.6 - 1.11
-├── 🎭 anecdotes/      # Exercises 1.12 - 1.14
+└── 🎭 anecdotes/      # Exercises 1.12 - 1.14
 ```
 
-### ▶️ Running the Project
+### ▶️ Running a Project
 1. Clone the repository:
    ```sh
    git clone https://github.com/CotNeo/fullstack-Open.git
-   cd part1/anecdotes
+   cd part1/{project_name}
    ```
 2. Install dependencies:
    ```sh
@@ -48,35 +51,38 @@ part1/
 ## 🇹🇷 Türkçe
 
 ### 📌 Genel Bakış
-**Anecdotes**, programlamayla ilgili anekdotları görüntüleyen basit bir **React** uygulamasıdır. Kullanıcılar favori anekdotlarına oy verebilir ve en fazla oyu alan anekdot vurgulanır. Bu proje, **Helsinki Üniversitesi** tarafından sunulan **Full Stack Open** kursunun bir parçasıdır.
+**Full Stack Open** kursunun **1. Bölümü**, **React’in temellerini**, **bileşen tabanlı mimariyi** ve **state yönetimini** öğreten projelerden oluşur:
+
+1. **Courseinfo** 📘 - Bileşenler ve `props` kullanımı.
+2. **Unicafe** 🍵 - State yönetimi ve kullanıcı etkileşimleri.
+3. **Anecdotes** 🎭 - Oylama ve state güncellemeleri.
 
 ### ⭐ Özellikler
-✅ Rastgele bir anekdot görüntüleme  
-✅ Kullanıcıların anekdotlara oy verebilmesi  
-✅ En fazla oy alan anekdotun gösterilmesi  
+✅ React bileşenleri ve `props` kullanımı 🏗️  
 ✅ `useState` ile state yönetimi ⚙️  
-✅ En çok oy alan anekdotun dinamik olarak güncellenmesi 📊  
-✅ Modüler bileşen yapısı ile daha iyi okunabilirlik 🎯  
+✅ Dinamik içerik güncellemeleri 📊  
+✅ Kullanıcı etkileşimlerini işleme 🎯  
+✅ Modüler bileşen yapısı 🔄  
 
 ### 🛠 Kullanılan Teknolojiler
 - ⚛️ React
 - 📜 JavaScript (ES6+)
-- 🔄 useState Hook
-- 🎨 Temel stil düzenlemeleri için HTML & CSS
+- 🔄 `useState` ile state yönetimi
+- 🎨 HTML & CSS ile temel stil düzenlemeleri
 
 ### 📂 Proje Yapısı
 ```bash
 part1/
 ├── 📘 courseinfo/     # Egzersizler 1.1 - 1.5
 ├── 🍵 unicafe/        # Egzersizler 1.6 - 1.11
-├── 🎭 anecdotes/      # Egzersizler 1.12 - 1.14
+└── 🎭 anecdotes/      # Egzersizler 1.12 - 1.14
 ```
 
 ### ▶️ Projenin Çalıştırılması
 1. Depoyu klonlayın:
    ```sh
    git clone https://github.com/CotNeo/fullstack-Open.git
-   cd part1/anecdotes
+   cd part1/{project_name}
    ```
 2. Bağımlılıkları yükleyin:
    ```sh
@@ -90,7 +96,7 @@ part1/
 
 ### 🔔 Notlar
 - 🛑 **Node.js sürümünüzün 14 veya üzeri olduğundan emin olun.**
-- 🔗 Her uygulama bağımsız olarak çalışır ve kendi `package.json` dosyasına sahiptir.
+- 🔗 Her proje bağımsız olarak çalışır ve kendi `package.json` dosyasına sahiptir.
 - ✅ Tüm çözümler, en iyi uygulamalara ve **ESLint** kurallarına uygun olarak hazırlanmıştır.
 - ❓ Herhangi bir **sorun veya soru** için GitHub deposunda bir **issue** açabilirsiniz veya benimle iletişime geçebilirsiniz! 💬
 
