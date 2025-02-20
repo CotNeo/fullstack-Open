@@ -123,4 +123,3 @@ Phonebook-Backend/
 │── .gitignore           # Gereksiz dosyaları yok sayma
 ├───node_modules/        # Yüklenen bağımlılıklar
 ```
-
