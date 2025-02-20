@@ -1,116 +1,96 @@
-# Bölüm 1 - Full Stack Open Egzersizleri / Part 1 - Full Stack Open Exercises
+# 🚀 Full Stack Open - Anecdotes 📖
 
-Bu dizin, Full Stack Open kursunun 1. Bölümü için egzersiz çözümlerini içerir. Her egzersiz, React'in temel kavramlarına odaklanan bağımsız bir proje veya uygulama olarak uygulanmıştır.
+## 🌍 English
 
-This directory contains the solutions for Part 1 of the Full Stack Open course. Each exercise has been implemented as an independent project or application, focusing on fundamental concepts of React.
+### 📌 Overview
+Anecdotes is a simple React application that displays programming-related anecdotes. Users can vote for their favorite anecdotes, and the one with the most votes is highlighted. This project is a part of the **Full Stack Open** course by the University of Helsinki.
 
-## Yapı / Structure
+### ⭐ Features
+✅ Displays a random anecdote  
+✅ Allows users to vote for anecdotes  
+✅ Shows the anecdote with the most votes  
+✅ Implements state management using `useState` ⚙️  
+✅ Dynamically updates the most voted anecdote 📊  
+✅ Uses modular components for better readability 🎯  
 
-```
+### 🛠 Technologies Used
+- ⚛️ React
+- 📜 JavaScript (ES6+)
+- 🔄 useState Hook
+- 🎨 HTML & CSS for basic styling
+
+### 📂 Project Structure
+```bash
 part1/
-├── courseinfo/     # Egzersizler 1.1 - 1.5 / Exercises 1.1 - 1.5
-├── unicafe/        # Egzersizler 1.6 - 1.11 / Exercises 1.6 - 1.11
-├── anecdotes/      # Egzersizler 1.12 - 1.14 / Exercises 1.12 - 1.14
+├── 📘 courseinfo/     # Exercises 1.1 - 1.5
+├── 🍵 unicafe/        # Exercises 1.6 - 1.11
+├── 🎭 anecdotes/      # Exercises 1.12 - 1.14
 ```
 
----
-
-## Uygulamalar / Applications
-
-### **1. Course Info**
-**Egzersizler 1.1 - 1.5 / Exercises 1.1 - 1.5**
-
-`courseinfo` uygulaması şu kavramları gösterir:
-- React bileşenleri / React components
-- Veriyi aktarmak için Props kullanımı / Using props to pass data
-- Uygulamayı daha küçük, yeniden kullanılabilir bileşenlere bölme / Breaking down the application into smaller reusable components
-
-The `courseinfo` application demonstrates the use of:
-- React components
-- Props to pass data
-- Breaking down the application into smaller reusable components
-
-#### Projeyi Çalıştırma / Running the Project:
-1. Dizine gidin / Navigate to the directory:
-   ```bash
-   cd part1/courseinfo
-   ```
-2. Bağımlılıkları yükleyin / Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Uygulamayı başlatın / Start the application:
-   ```bash
-   npm start
-   ```
-
----
-
-### **2. Unicafe**
-**Egzersizler 1.6 - 1.11 / Exercises 1.6 - 1.11**
-
-`unicafe` uygulaması, kullanıcı geri bildirimlerini toplar ve istatistikler sağlar. Özellikler şunları içerir:
-- `useState` ile state yönetimi / Managing state with `useState`
-- Kullanıcı etkileşimlerini işleme / Handling user interactions
-- Kullanıcı geri bildirimlerine dayalı dinamik istatistiklerin gösterilmesi / Displaying dynamic statistics based on user feedback
-- Bileşen modülerleştirme / Component modularization
-- Daha iyi sunum için tablo tabanlı düzen / Table-based layout for better presentation
-
-The `unicafe` application collects user feedback and provides statistics. Features include:
-- Managing state with `useState`
-- Handling user interactions
-- Displaying dynamic statistics based on user feedback
-- Component modularization
-- Table-based layout for better presentation
-
-#### Projeyi Çalıştırma / Running the Project:
-1. Dizine gidin / Navigate to the directory:
-   ```bash
-   cd part1/unicafe
-   ```
-2. Bağımlılıkları yükleyin / Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Uygulamayı başlatın / Start the application:
-   ```bash
-   npm start
-   ```
-
----
-
-### **3. Anecdotes**
-**Egzersizler 1.12 - 1.14 / Exercises 1.12 - 1.14**
-
-`anecdotes` uygulaması, rastgele anekdotlar gösterir ve kullanıcıların favorilerini oylamasına olanak tanır. Özellikler şunları içerir:
-- Anekdotlar ve oylar için state yönetimi / Managing state for anecdotes and votes
-- Anekdotlar için rastgele sayılar üretilmesi / Generating random numbers for anecdotes
-- En çok oy alan anekdotun belirlenmesi ve gösterilmesi / Identifying and displaying the most-voted anecdote
-
-The `anecdotes` application displays random anecdotes and allows users to vote for their favorites. Features include:
-- Managing state for anecdotes and votes
-- Generating random numbers for anecdotes
-- Identifying and displaying the most-voted anecdote
-
-#### Projeyi Çalıştırma / Running the Project:
-1. Dizine gidin / Navigate to the directory:
-   ```bash
+### ▶️ Running the Project
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/CotNeo/fullstack-Open.git
    cd part1/anecdotes
    ```
-2. Bağımlılıkları yükleyin / Install dependencies:
-   ```bash
+2. Install dependencies:
+   ```sh
    npm install
    ```
-3. Uygulamayı başlatın / Start the application:
-   ```bash
+3. Start the development server:
+   ```sh
    npm start
    ```
+4. Open the application in your browser at `http://localhost:3000/` 🌐
 
 ---
 
-## Notlar / Notes
-- Node.js sürümünüzün 14 veya üzeri olduğundan emin olun. / Ensure that you are running Node.js version 14 or above.
-- Her uygulama bağımsız olarak çalışır ve kendi `package.json` dosyasına sahiptir. / Each application runs independently and has its own `package.json` file.
-- Tüm çözümler, en iyi uygulamalara ve ESLint kurallarına uygun olarak hazırlanmıştır. / All solutions adhere to best practices and ESLint rules.
+## 🇹🇷 Türkçe
 
-Herhangi bir sorun veya soru için benimle iletişime geçmekten veya GitHub deposunda bir sorun açmaktan çekinmeyin! / For any issues or questions, feel free to contact me or open an issue in the GitHub repository!
+### 📌 Genel Bakış
+**Anecdotes**, programlamayla ilgili anekdotları görüntüleyen basit bir **React** uygulamasıdır. Kullanıcılar favori anekdotlarına oy verebilir ve en fazla oyu alan anekdot vurgulanır. Bu proje, **Helsinki Üniversitesi** tarafından sunulan **Full Stack Open** kursunun bir parçasıdır.
+
+### ⭐ Özellikler
+✅ Rastgele bir anekdot görüntüleme  
+✅ Kullanıcıların anekdotlara oy verebilmesi  
+✅ En fazla oy alan anekdotun gösterilmesi  
+✅ `useState` ile state yönetimi ⚙️  
+✅ En çok oy alan anekdotun dinamik olarak güncellenmesi 📊  
+✅ Modüler bileşen yapısı ile daha iyi okunabilirlik 🎯  
+
+### 🛠 Kullanılan Teknolojiler
+- ⚛️ React
+- 📜 JavaScript (ES6+)
+- 🔄 useState Hook
+- 🎨 Temel stil düzenlemeleri için HTML & CSS
+
+### 📂 Proje Yapısı
+```bash
+part1/
+├── 📘 courseinfo/     # Egzersizler 1.1 - 1.5
+├── 🍵 unicafe/        # Egzersizler 1.6 - 1.11
+├── 🎭 anecdotes/      # Egzersizler 1.12 - 1.14
+```
+
+### ▶️ Projenin Çalıştırılması
+1. Depoyu klonlayın:
+   ```sh
+   git clone https://github.com/CotNeo/fullstack-Open.git
+   cd part1/anecdotes
+   ```
+2. Bağımlılıkları yükleyin:
+   ```sh
+   npm install
+   ```
+3. Geliştirme sunucusunu başlatın:
+   ```sh
+   npm start
+   ```
+4. Tarayıcınızda `http://localhost:3000/` adresini açarak uygulamayı çalıştırın. 🌐
+
+### 🔔 Notlar
+- 🛑 **Node.js sürümünüzün 14 veya üzeri olduğundan emin olun.**
+- 🔗 Her uygulama bağımsız olarak çalışır ve kendi `package.json` dosyasına sahiptir.
+- ✅ Tüm çözümler, en iyi uygulamalara ve **ESLint** kurallarına uygun olarak hazırlanmıştır.
+- ❓ Herhangi bir **sorun veya soru** için GitHub deposunda bir **issue** açabilirsiniz veya benimle iletişime geçebilirsiniz! 💬
+
