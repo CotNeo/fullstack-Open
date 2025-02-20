@@ -15,14 +15,35 @@ This project is part of the **University of Helsinki's Full Stack Open course (P
 - Log HTTP requests
 - Handles unknown endpoints
 - **MongoDB as database (hosted on MongoDB Atlas)**
+- **Data validation using Mongoose**
+- **Code linting with ESLint**
 
-### 📦 Technologies Used
+### 📺 Validation and Data Integrity
+This API includes **Mongoose validation** to ensure data integrity:
+- **Name must be at least 3 characters long**
+- **Phone number must follow the format:** `XX-XXXXXXX` or `XXX-XXXXXXXX`
+- If validation fails, an appropriate error message is returned.
+
+### 📺 Code Quality with ESLint
+- The project uses **ESLint** for static code analysis.
+- Predefined style rules enforce clean and consistent code.
+- To check for linting issues, use:
+  ```sh
+  npm run lint
+  ```
+- To automatically fix linting errors:
+  ```sh
+  npx eslint . --fix
+  ```
+
+### 📺 Technologies Used
 - **Node.js**
 - **Express.js**
 - **MongoDB Atlas** (Database)
 - **Mongoose** (ODM for MongoDB)
 - **Morgan** (Logging)
 - **CORS** (Cross-Origin Resource Sharing)
+- **ESLint** (Code Quality and Linting)
 
 ---
 
@@ -40,22 +61,21 @@ $ npm install
 ```
 
 ### 3️⃣ Configure MongoDB Atlas (Database Setup)
-This application uses **MongoDB Atlas** for data storage.
 
-#### 🔹 **1. Create a MongoDB Atlas Account**
+#### 👉 **1. Create a MongoDB Atlas Account**
 1. Go to [MongoDB Atlas](https://www.mongodb.com/atlas).
 2. Create a free account and start a new cluster.
 3. In **Database Access**, create a new user with the role **Read & Write**.
 4. In **Network Access**, add **0.0.0.0/0** to allow connections from anywhere.
 
-#### 🔹 **2. Get Your Connection String**
+#### 👉 **2. Get Your Connection String**
 1. Go to **Database > Connect > Connect Your Application**.
 2. Copy the MongoDB URI, it should look like:
    ```
    mongodb+srv://your-username:your-password@cluster0.mongodb.net/phonebookApp?retryWrites=true&w=majority
    ```
 
-#### 🔹 **3. Store MongoDB Credentials in `.env`**
+#### 👉 **3. Store MongoDB Credentials in `.env`**
 1. **Create a `.env` file** in the root directory.
 2. **Paste the following line into the `.env` file:**
    ```env
@@ -74,7 +94,7 @@ $ npm run dev
 
 ---
 
-## 📂 API Endpoints
+## 📚 API Endpoints
 | Method | Endpoint           | Description                        |
 |--------|-------------------|------------------------------------|
 | GET    | `/api/persons`    | Get all contacts                  |
@@ -87,22 +107,7 @@ $ npm run dev
 
 ---
 
-## 🗄️ Working with MongoDB in the Terminal
-📌 **To manually add or retrieve contacts, use `mongo.js`.**
-
-### ➕ **Add a new contact from the terminal**
-```sh
-node mongo.js yourpassword "John Doe" "123-456789"
-```
-
-### 📞 **Retrieve all contacts**
-```sh
-node mongo.js yourpassword
-```
-
----
-
-## 📂 Project Structure
+## 📚 Project Structure
 ```
 Phonebook-Backend/
 │── package.json         # Project dependencies
@@ -120,7 +125,6 @@ Phonebook-Backend/
 ## 🌐 Live Demo
 - **Frontend:** [Phonebook App](https://fso-frontend-phonebook.netlify.app/) 🌍
 - **Backend API:** [Phonebook Backend](https://phonebook-backend-77kw.onrender.com/api/persons) ⚡
-  - *Note: The backend is deployed on a free-tier plan, so there may be some delay when the server is cold. If there are no recent requests, the server may be temporarily inactive.*
 
 ---
 
@@ -133,31 +137,18 @@ Bu proje, **Helsinki Üniversitesi Full Stack Open kursunun 3. Bölüm Egzersizl
 
 ---
 
-## 🛠️ MongoDB Atlas Kurulumu ve Kullanımı
-1️⃣ **[MongoDB Atlas](https://www.mongodb.com/atlas) hesabı açın.**  
-2️⃣ **Ücretsiz bir veritabanı (Cluster) oluşturun.**  
-3️⃣ **Database Access** kısmından bir kullanıcı oluşturun (**Read & Write yetkisi verin**).  
-4️⃣ **Network Access** kısmına gidin ve **`0.0.0.0/0`** ekleyin.  
-5️⃣ **Bağlantı URI’sini `.env` dosyanıza ekleyin:**  
-   ```env
-   MONGO_URI=mongodb+srv://fullstack:SeninŞifren@cluster0.mongodb.net/phonebookApp?retryWrites=true&w=majority
-   ```
-
-### 📞 **MongoDB Kullanımı**
-- **Yeni kişi eklemek için:**
+## 🔧 Validation & ESLint
+- **Ad Soyad** minimum 3 karakter olmalıdır.
+- **Telefon numarası** `XX-XXXXXXX` veya `XXX-XXXXXXXX` formatında olmalıdır.
+- **Kod Kalitesi:** Proje, **ESLint** ile kod standartlarını koruyarak daha okunaklı hale getirilmiştir.
+- **Kod format kontrolü:**
   ```sh
-  node mongo.js SeninŞifren "Ahmet Yılmaz" "0532-4567890"
+  npm run lint
   ```
-- **Kişileri listelemek için:**
+- **Hataları otomatik düzeltmek için:**
   ```sh
-  node mongo.js SeninŞifren
+  npx eslint . --fix
   ```
-
----
-
-### 🌐 **Canlı Demo**
-- **Frontend:** [Telefon Rehberi Uygulaması](https://fso-frontend-phonebook.netlify.app/) 🌍
-- **Backend API:** [Telefon Rehberi Backend](https://phonebook-backend-77kw.onrender.com/api/persons) ⚡
 
 ---
 
