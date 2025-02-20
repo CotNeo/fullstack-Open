@@ -1,4 +1,3 @@
 [build]
-  base = "part2/phonebook"   # Projeyi buradan çalıştır
-  publish = "part2/phonebook/dist"  # Yayınlanacak dosyalar burada
+  publish = "Part_2/phonebook/dist"  # Yayınlanacak dosyalar burada
   command = "npm run build"   # Build komutu
