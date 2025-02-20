@@ -66,19 +66,31 @@ const App = () => {
   };
 
   const deletePerson = (id) => {
-    const person = persons.find((p) => p.id === id);
+    console.log("Silmek istenen ID:", id);
+    console.log("Kişi listesi:", persons);
+
+    // Burada _id kullanmalısın
+    const person = persons.find((p) => p._id === id);
+
+    if (!person) {
+      console.error("❌ HATA: Silinmek istenen kişi bulunamadı! Kişi listesi:", persons);
+      return;
+    }
+
     if (window.confirm(`Delete ${person.name}?`)) {
       personService.remove(id)
         .then(() => {
-          setPersons(persons.filter((p) => p.id !== id));
+          setPersons(persons.filter((p) => p._id !== id));
           showNotification(`Deleted ${person.name}`);
         })
         .catch(() => {
           showNotification(`Error: ${person.name} was already removed from the server`, 'error');
-          setPersons(persons.filter((p) => p.id !== id));
+          setPersons(persons.filter((p) => p._id !== id));
         });
     }
-  };
+};
+
+
 
   const filteredPersons = Array.isArray(persons) ? persons.filter((p) => p.name.toLowerCase().includes(filter.toLowerCase())) : [];
 

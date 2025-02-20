@@ -1,6 +1,8 @@
 import axios from 'axios'
 
 const baseUrl = "https://phonebook-backend-77kw.onrender.com/api/persons"
+//for development
+//const baseUrl = "http://localhost:3001/api/persons"
 
 // 📌 Tüm kişileri getir
 const getAll = async () => {

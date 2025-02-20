@@ -3,12 +3,12 @@
 
 const Persons = ({ persons, deletePerson }) => (
   <ul>
-    {persons.map((person) => (
-      <li key={person.id}>
-        {person.name} {person.number}{' '}
-        <button onClick={() => deletePerson(person.id)}>Delete</button>
-      </li>
-    ))}
+  {persons.map(person => (
+  <li key={person._id}>
+    {person.name} {person.number} 
+    <button onClick={() => deletePerson(person._id)}>Delete</button>
+  </li>
+))}
   </ul>
 );
 export default Persons;
