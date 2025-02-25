@@ -101,7 +101,7 @@ npx playwright test
 
 - Toggleable blog details.
 - Notifications for actions (Success/Error Messages).
-- Responsive & clean design with **TailwindCSS**.
+
 
 ---
 
@@ -275,7 +275,7 @@ npx playwright test
 
 - Açılır kapanır blog detayları.
 - İşlemler için bildirimler (Başarı/Hata Mesajları).
-- **TailwindCSS** ile responsive & temiz tasarım.
+
 
 ---
 
