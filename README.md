@@ -145,7 +145,7 @@ The culmination of Part 9 is the **Patientor** application - a complete medical 
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/CotNeo/fullstack-Open
    cd fullstack-Open
    ```
 
